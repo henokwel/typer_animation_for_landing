@@ -1,38 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Proza+Libre&display=swap");
+
+:root {
+  /* Colors */
+  --main-bg-color: rgb(238, 236, 236);
+  --main-font-color: #1c1c1c;
+  --card-bg-one: #ccfff5;
+  --card-bg-two: #fff7cc;
+  --card-bg-three: #cccdff;
+  /* Fonts */
+  --main-font-family: "Nanum Gothic", sans-serif;
+  --headline-font-family: "Proza Libre", sans-serif;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: var(--main-font-family);
   min-height: 100vh;
+  /* width: 100vw; */
+
+  overflow: hidden;
+}
+.App-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: flex-end; */
+  /* height: 30vh; */
+  margin: 20px 40px 40px 30px;
+  word-wrap: break-word;
+}
+.App-header h1 {
+  font-family: var(--headline-font-family);
+  font-size: clamp(2.7rem, 3vw, 4rem);
+  margin: 4px 4px 4px 0;
+  line-height: 150%;
+}
+.App-header p {
+  max-width: 56ch;
+  font-size: clamp(1.2rem, 1vw, 2rem);
+  word-wrap: break-word;
+  margin: 4px;
+  line-height: 130%;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 15px;
+  transition: 1s ease-in;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card {
+  display: flex;
+  justify-content: baseline;
+  width: 650px;
+  /* max-height: 300px; */
+  min-height: 250px;
+  height: fit-content;
+  background-color: var(--card-bg-two);
+  padding: 10px;
+  margin: 10px;
+}
+
+/* .card h3{
+  font-family: var(--headline-font-family);
+  font-weight: 700;
+} */
+
+.card a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+ 
+.card_text {
+  /* max-width: 60%; */
+  font-size: clamp(1.2rem, 1.4vw, 2rem);
+  line-height: 150%;
+  font-size: 1.1rem;
+  padding-left: 28px;
+  width: 60ch;
+}
+.card_media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 10px;
+
+  /* background-color: red; */
+}
+
+.card:nth-child(2) {
+  background-color: var(--card-bg-three);
+}
+.card:nth-child(3) {
+  background-color: var(--card-bg-one);
+}
+
+.card:nth-child(4) {
+  background-color: #ffff;
+}
+.breakHr {
+  display: none;
+}
+
+ 
+
+@media screen and (max-width: 720px) {
+
+  .App-header{
+    margin: 20px 40px 23px 23px;
   }
-  to {
-    transform: rotate(360deg);
+  main {
+    padding-left: 0;
+  }
+  .breakHr {
+    display: inline;
+  }
+
+  .card {
+    display: flex;
+
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    transition: 0.4s ease-in;
+    /* flex-direction: column; */
+  }
+
+  .card_text {
+    padding-left: 8px;
+    line-height: 160%;
+
   }
 }
